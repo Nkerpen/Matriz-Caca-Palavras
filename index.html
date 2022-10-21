@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Caça-Palavras</title>
+</head>
+<body>
+    <script>
+        matriz = new Array;
+        matriz = [
+            ["E","T","","M","O","S","A","S","S","A","U","R","O","","B","","T"],
+            ["S","","I","","","","","","","","","","","","A","","H"],
+            ["P","","","R","","","","","","","","","","","R","","E"],
+            ["I","","","","A","L","O","S","S","A","U","R","O","","I","","R"],
+            ["N","","","","","N","","T","","","","","","","O","","E"],
+            ["O","","U","","","","O","","I","","","","","","N","","Z"],
+            ["S","","T","","","","","S","","T","","","","","I","","I"],
+            ["S","","A","","","","","","S","","A","","","","X","","N"],
+            ["A","","H","","","","","","","A","","N","","","","","O"],
+            ["U","","R","","","","","","","","U","","O","","","","S"],
+            ["R","","A","","","","","","","","","R","","B","","","A"],
+            ["O","","P","","","","D","I","P","L","O","D","O","C","O","","U"],
+            ["","","T","","","","","","","","","","","","","A","R"],
+            ["","","O","","","","","","","","","","","","","","U"],
+            ["","","R","","","","","","","","","","","","","","S"],
+            ["","P","T","E","R","O","D","A ","C","T","I","L","O","","","",""],
+            
+        ];
+
+        window.onload = function(){
+            for(let node of document.querySelectorAll("td")){
+                if(node.textContent != ""){
+                    node.className = "selected";
+                }
+                else{
+                    let charcode = Math.round(65 + Math.random() * 25)
+                    node.textContent = String.fromCharCode(charcode)
+                }
+            }
+        }
+
+        document.write("<h1> Caça-Palavras de alguns dinossauros que eu acho legais :) </h1><table border='1' align='center'>");
+        for (linha = 0; linha < 17; linha++){
+            document.write("<tr>")
+            for(coluna = 0; coluna < 17; coluna++){
+                document.write("<td>" + matriz[linha][coluna] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+    </script>
+</body>
+</html>
